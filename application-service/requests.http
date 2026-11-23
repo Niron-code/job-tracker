@@ -1,0 +1,35 @@
+### create
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{ "company": "Xero", "jobTitle": "Developer", "status": "APPLIED" }
+
+### list all
+GET http://localhost:8080/api/applications
+
+### filter by status
+GET http://localhost:8080/api/applications?status=APPLIED
+
+### get one
+GET http://localhost:8080/api/applications/1
+
+### update
+PUT http://localhost:8080/api/applications/1
+Content-Type: application/json
+
+{ "company": "Xero", "jobTitle": "Senior Developer", "status": "INTERVIEW", "cvVersion": "v2" }
+
+### change status
+PATCH http://localhost:8080/api/applications/1/status?status=OFFER
+
+### delete
+DELETE http://localhost:8080/api/applications/1
+
+### not found
+GET http://localhost:8080/api/applications/999
+
+### invalid body
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{ "company": "", "status": "APPLIED" }
